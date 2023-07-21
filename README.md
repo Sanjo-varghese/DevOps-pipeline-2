@@ -4,4 +4,4 @@ For build use : mvn clean package
 
 Test
 
-sanjo varghese (syste adiministrator)
+sanjo varghese (system administrator)
