@@ -27,8 +27,7 @@ pipeline{
 
             }
         }
-
-        // Stage3 : Publish the artifacts to Nexus
+ // Stage3 : Publish the artifacts to Nexus
         stage ('Publish to Nexus'){
             steps {
                 script {
@@ -40,9 +39,9 @@ pipeline{
                 classifier: '', 
                 file: "target/${ArtifactId}-${Version}.war", 
                 type: 'war']], 
-                credentialsId: '4aacbb9c-895d-4fe8-9f2a-b0a108d54756', 
+                credentialsId: 'b73e885a-545c-3525-868b-64e11b1e299d', 
                 groupId: "${GroupId}", 
-                nexusUrl: '18.119.14.128:8081', 
+                nexusUrl: '18.188.83.31:8081/', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: "${NexusRepo}", 
@@ -50,7 +49,6 @@ pipeline{
              }
             }
         }
-
         // Stage 4 : Print some information
         stage ('Print Environment variables'){
                     steps {
@@ -71,7 +69,7 @@ pipeline{
                     transfers: [
                         sshTransfer(
                                 cleanRemote:false,
-                                execCommand: 'ansible-playbook /opt/playbooks/downloadanddeploy_as_tomcat_user.yaml -i /opt/playbooks/hosts',
+                                execCommand: 'ansible-playbook /opt/playbooks/tomcat.yaml -i /opt/playbooks/hosts',
                                 execTimeout: 120000
                         )
                     ], 
