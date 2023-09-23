@@ -27,6 +27,7 @@ This example uses a simple maven based webapp project.
 For build use : mvn clean package
 
 Test 
+# Shell script:https://github.com/Sanjo-varghese/DevOps-2-shell_script
 
 # Architecture
 ![devops 2 diagram](https://github.com/Sanjo-varghese/DevOps-pipeline-2/assets/116708794/0db74e9a-84e8-473d-ba64-21045d03881b)
